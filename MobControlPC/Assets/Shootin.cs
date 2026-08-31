@@ -20,5 +20,6 @@ public class Shootin : MonoBehaviour
     {
         GameObject b = Instantiate(bean, transform.position, Quaternion.identity);
         b.GetComponent<Rigidbody>().AddForce(Vector3.forward * shootForce, ForceMode.Impulse);
+        
     }
 }
