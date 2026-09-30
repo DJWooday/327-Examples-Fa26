@@ -13,6 +13,7 @@ public class BeanSchMovement : MonoBehaviour
     public LayerMask groundingLayers;
 
     Rigidbody rb;
+    Animator animator;
     InputAction moveAction, jumpAction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,6 +22,7 @@ public class BeanSchMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        animator = GetComponent<Animator>();
     }
 
 
@@ -31,6 +33,8 @@ public class BeanSchMovement : MonoBehaviour
         //if (Keyboard.current.aKey.isPressed) { horMove = -1; }
         //if (Keyboard.current.dKey.isPressed) { horMove = 1; }
         movement = moveAction.ReadValue<Vector2>();
+        bool isMov = movement.magnitude > 0;
+        animator.SetBool("IsMoving", isMov);
 
         //Vector3 moveVec = new Vector3(horMove, 0, 0) * Time.deltaTime * speed;
         //rb.MovePosition(moveVec + transform.position);
