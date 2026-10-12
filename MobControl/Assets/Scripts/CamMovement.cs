@@ -14,7 +14,7 @@ public class CamMovement : MonoBehaviour
     void Start()
     {
         lookAction = InputSystem.actions.FindAction("Look");
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()

@@ -54,6 +54,7 @@ public class BeanSchMovement : MonoBehaviour
         //if (Physics.Raycast(foot.position, Vector3.down, .05f)) 
         //    isGrounded = true;
         //else isGrounded = false;
+        Debug.DrawRay(foot.position, Vector3.down, Color.yellow);
         isGrounded = Physics.CheckSphere(foot.position, .2f, groundingLayers);
 
         // Jump
